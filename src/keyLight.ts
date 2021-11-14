@@ -70,7 +70,7 @@ export class KeyLightInstance {
       result.options = (await axios.get<KeyLightOptions>(result.lightsEndpoint)).data;
       result.settings = (await axios.get<KeyLightSettings>(result.settingsEndpoint)).data;
     } catch (error) {
-      return Promise.reject();
+      return Promise.reject(error);
     }
 
     result.pollOptions();
